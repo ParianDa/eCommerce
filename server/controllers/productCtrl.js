@@ -36,21 +36,40 @@ const productCtrl = {
                 category  
             })
 
-            res.json(newProduct)
+            await newProduct.save()
+
+            res.json({msg:"Created a product"})
 
         }catch(err) {
             return res.status(500).json({mssg:err.message})
         }
     },
-    deleteProduct:(req,res) => {
+    deleteProduct:async (req,res) => {
         try{
+            await Product.findByIdAndDelete(req.params.id)
+            res.json({msg:"Deleted a product"})
 
         }catch(err) {
             return res.status(500).json({mssg:err.message})
         }
     },
-    updateProduct:(req,res) => {
+    updateProduct:async (req,res) => {
         try{
+            const {
+                title,
+                price,
+                description,
+                content,
+                images,
+                category} = req.body
+
+                if(!images) return res.status(500).json({msg:"No image uploaded"})
+
+                await Product.findByIdAndUpdate({_id:req.params.id}, {
+                    title:title.toLowerCase(),price,description,content,category
+                })
+
+                res.json({msg:"Updated a product"})
 
         }catch(err) {
             return res.status(500).json({mssg:err.message})

@@ -4,7 +4,6 @@ const productsSchema = new mongoose.Schema({
     product_id:{
         type:String,
         trim:true,
-        unique:true,
         required:true
     },
     title:{
@@ -15,17 +14,14 @@ const productsSchema = new mongoose.Schema({
     price:{
         type:String,
         trim:true,
-        unique:true
     },
     description:{
         type:String,
         trim:true,
-        unique:true
     },
     content: {
         type:String,
         trim:true,
-        unique:true
     },
     images: {
         type:Object,
