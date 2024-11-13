@@ -1,0 +1,111 @@
+/* General reset for body and header container */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  header .menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* Logo Styling */
+  header .logo a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Navigation Links */
+  header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0;
+  }
+  
+  header ul li {
+    position: relative;
+  }
+  
+  header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  /* Close icon styling */
+  header ul li svg {
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* Cart Icon */
+  header span {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  header span span {
+    margin-right: 5px;
+    background: #ff6347;
+    padding: 2px 6px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    /* Show the menu icon */
+    header .menu {
+      display: block;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+  
+    /* Hide navigation links initially */
+    header ul {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #333;
+      width: 200px;
+      flex-direction: column;
+      padding: 20px;
+      display: none; /* Initially hidden */
+    }
+  
+    /* Show close icon in mobile nav */
+    header ul li svg {
+      display: block;
+      align-self: flex-end;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+  
+    /* Display the menu when toggled */
+    header ul.active {
+      display: flex;
+    }
+  
+    /* Hide the cart icon on mobile */
+    header span {
+      display: none;
+    }
+  }
+  

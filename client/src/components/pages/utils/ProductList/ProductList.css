@@ -1,0 +1,105 @@
+/* Container for all product cards */
+.products_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center-align cards */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+  }
+  
+  
+  /* Container for each product card */
+  .product_card {
+    width: 25%; /* Adjusted to make the cards smaller */
+    max-width: 300px; /* Ensures cards don't get too wide on larger screens */
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+  }
+  
+  .product_card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product_card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* Product information */
+  .product_box {
+    margin: 10px 0;
+  }
+  
+  .product_box h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  .product_box span {
+    font-size: 1rem;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .product_box p {
+    font-size: 0.85rem;
+    color: #555;
+  }
+  
+  /* Styling the buttons */
+  .row_btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .row_btn a {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #6260607e;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  #btn_buy {
+    background-color: #28a745;
+  }
+  
+  #btn_buy:hover {
+    background-color: #218838;
+  }
+  
+  #btn_view {
+    background-color: #007bff;
+  }
+  
+  #btn_view:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive layout */
+  @media (min-width: 768px) {
+    .product_list_container {
+      padding: 20px 40px; /* Adds padding on left and right sides */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .product_card {
+      width: 90%; /* Full width on smaller screens */
+      max-width: none; /* Removes max-width limit on smaller screens */
+    }
+  }
+  
